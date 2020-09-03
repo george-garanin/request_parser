@@ -8,10 +8,10 @@ unless file_path_validator.valid?
   return
 end
 
-prepared_data = Loaders::LogFile.new(ARGV[0]).load
+parsed_data = Loaders::LogFile.new(ARGV[0]).load
 
-visits = Computes::AllVisits.new(prepared_data).calculate
-uniq_views = Computes::UniqueVisits.new(parsed_file).calculate
+visits = Computes::AllVisits.new(parsed_data).calculate
+uniq_views = Computes::UniqueVisits.new(parsed_data).calculate
 
 pp "List of webpages with most page views ordered from most pages views to less page views"
 visits.each { |visit| pp "#{visit[0]} #{visit[1]} visits" }
