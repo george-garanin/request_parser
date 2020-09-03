@@ -18,6 +18,9 @@ b. Returns the following:
          /index     5 unique views
          etc...
 ```
+### How it works
+ I use a hash as primary storage for user requests. Script reading file by each line, It helps save memory and processing each user request
+ - Structure of Hash `{ 'some_url' => { '111.222.333.444' => count_visits } }
 
 ### install gems
 `bundle install`
