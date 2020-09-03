@@ -11,3 +11,4 @@ end
 prepared_data = Loaders::LogFile.new(ARGV[0]).load
 
 visits = Computes::AllVisits.new(prepared_data).calculate
+uniq_views = Computes::UniqueVisits.new(parsed_file).calculate
